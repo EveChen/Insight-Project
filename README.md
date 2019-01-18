@@ -1,7 +1,7 @@
 # Project Idea 
 A dashboard to lookup the **look-alike** product by matching the input image with other product photos in the same category (using interest point).
 
-What is the interest point? !https://www.kaggle.com/wesamelshamy/image-feature-extraction-and-matching-for-newbies
+What is the interest point? https://www.kaggle.com/wesamelshamy/image-feature-extraction-and-matching-for-newbies
 
 # Tech Stack
 1. AWS S3
@@ -10,7 +10,7 @@ What is the interest point? !https://www.kaggle.com/wesamelshamy/image-feature-e
 5. Flask
 
 # Data Source
-Amazon review data: !http://jmcauley.ucsd.edu/data/amazon/
+Amazon review data: http://jmcauley.ucsd.edu/data/amazon/
 1. Review data (18GB) 
 2. Product metadata (3.1GB)
 3. Visual data (181 GB)
