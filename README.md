@@ -13,6 +13,8 @@ Amazon review data: !http://jmcauley.ucsd.edu/data/amazon/
 2. Product metadata (3.1GB)
 3. Visual data (181 GB)
 
+![reviews_df.png]
+
 # Engineering Challenge
 1. How to join different datasets, especially text joins image data
 2. How to lookup the product features inversely? e.g. product -> features; feature -> products
