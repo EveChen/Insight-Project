@@ -13,7 +13,8 @@ Amazon review data: !http://jmcauley.ucsd.edu/data/amazon/
 2. Product metadata (3.1GB)
 3. Visual data (181 GB)
 
-![reviews_df.png]
+![reviews data.png](https://github.com/EveChen/Insight-Project/reviews_df.png)
+      
 
 # Engineering Challenge
 1. How to join different datasets, especially text joins image data
