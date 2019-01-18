@@ -22,6 +22,6 @@ Sellers on Amazon can identify customer preferences in different regions
 A web application that user can enter the product name. It will compare the ratings and different adjectives that different regions users used.
 
 # Stretch Goals
-Version1: Just compare ratings
-Version2: Add sentiments analysis
-Version3: Do it efficiently
+* Version1: Just compare ratings
+* Version2: Add sentiments analysis
+* Version3: Do it efficiently
