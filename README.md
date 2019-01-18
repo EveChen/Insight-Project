@@ -1,10 +1,12 @@
 # Project Idea 
-A dashboard to see the product features that the users may care about and inversely find other similar products based on the features listed
+A dashboard to lookup the **look-alike** product by matching the input image with other product photos in the same category (using interest point).
+
+What is the interest point? !https://www.kaggle.com/wesamelshamy/image-feature-extraction-and-matching-for-newbies
 
 # Tech Stack
 1. AWS S3
 2. Spark
-4. Cassandra: 
+4. Cassandra
 5. Flask
 
 # Data Source
@@ -17,15 +19,16 @@ Amazon review data: !http://jmcauley.ucsd.edu/data/amazon/
   
 
 # Engineering Challenge
-1. How to join different datasets, especially text joins image data
-2. How to lookup the product features inversely? e.g. product -> features; feature -> products
+1. How to join different datasets
+2. Build a scalable distributed training pipeline for image vectors, that can both train on very large images, and train as fast as possible
 
 # Business Value
-Customers can filter products based on their prefered features
+1. Customers can filter products based on the shape/appearance/color of the product
+2. For customers who can not elaborate what style of product they want, they can check the look-alike products intead of searching with keywords
 
 # MVP
-A web application that user can enter the product name. It will show some basic information (e.g. item name, price, rating etc) and bunch of product features. If the user is not satisfied with the current item, then click on the specific feature tag, which will direct the user to similar items with the same feature tag.
+A dashboard that user can enter the product name. It will show some basic information (e.g. item name, price, rating etc) and **look-alike** products. If the user is not satisfied with the current item, then click on the look-alike product, which will direct the user to that item in the same category.
 
 # Stretch Goals
-* Workflow automation: Schedulers like Airflow?
+* Workflow automation: Schedulers like Airflow
 * Optimize the performance: Join different data sources, caching
