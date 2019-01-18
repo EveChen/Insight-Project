@@ -1,19 +1,21 @@
 # Project Idea 
-Aggregate ratings in each product by regions. Compare the average ratings, sentiments within five countries (US, UK, DE, FR, JP).
+A dashboard to see the product features that the users may care about and inversely find other similar products based on the features listed
 
 # Tech Stack
 1. AWS S3: Has data in S3 bucket
-2. Kafka: Import data to do partition, replication to make the pipeline more fault-tolerance
-3. Spark: Batch streaming, doing aggregation, data manipulation (NLTK)
-4. MySQL: Queries
+2. Spark: Batch streaming, doing aggregation
+4. Cassandra
 5. Flask: Web application
 
 # Data Source
-Amazon open data: !https://registry.opendata.aws/amazon-reviews/
+Amazon review data: !http://jmcauley.ucsd.edu/data/amazon/
+1. Review data (18GB): 
+2. Product metadata (3.1GB)
+3. Visual data (181 GB)
 
 # Engineering Challenge
-1. How to aggregate ratings efficiently? e.g. Use key-pair?
-2. How to query a large scale of data efficiently? e.g. Presto?
+1. How to join different datasets, especially text joins image data
+2. How to lookup the product features
 
 # Business Value
 Sellers on Amazon can identify customer preferences in different regions
