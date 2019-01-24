@@ -1,30 +1,29 @@
 # Project Idea 
-A dashboard to see the product features that the users may care about and inversely find other similar products based on the features listed
+A dashboard to provide the reliability of Amazon reviews for customers to make buying decisions. As the user enter the product link, this dashboard will automatically show top 10 most reliable reviews and the least reliable reviews (based on the average helpfulness score, word count and the review history).
 
 # Tech Stack
-1. AWS S3
-2. Spark
-4. Cassandra: 
-5. Flask
+1. AWS S3: Data Storage
+2. Spark: Data Processing
+4. PostgreSQL: Query
+5. Flask: Dashboard
 
 # Data Source
 Amazon review data: !http://jmcauley.ucsd.edu/data/amazon/
-1. Review data (18GB) 
-2. Product metadata (3.1GB)
-3. Visual data (181 GB)
+1. Review data (40 GB) 
+2. Product metadata (10 GB)
 
 ![reviews_df](https://user-images.githubusercontent.com/11646036/51401319-4bab2200-1aff-11e9-8083-0c8741a102c3.png)
   
 
 # Engineering Challenge
-1. How to join different datasets, especially text joins image data
-2. How to lookup the product features inversely? e.g. product -> features; feature -> products
+1. How to join different datasets, especially there're 50 datasets (1 GB/per data set) seperatedly within AWS S3.
+2. How to join/query efficiently?
 
 # Business Value
-Customers can filter products based on their prefered features
+Customers can refer to the reliable reviews to make buying decisions.
 
 # MVP
-A web application that user can enter the product name. It will show some basic information (e.g. item name, price, rating etc) and bunch of product features. If the user is not satisfied with the current item, then click on the specific feature tag, which will direct the user to similar items with the same feature tag.
+A web application that user can enter the product link or name. It will show some basic information (e.g. item name, price, rating etc) and the ranking about the top 10 most/least reliable reviews. 
 
 # Stretch Goals
 * Workflow automation: Schedulers like Airflow?
