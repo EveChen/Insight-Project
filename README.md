@@ -27,6 +27,13 @@ A web application that user can enter the product link or name. It will show som
 
 ![w2-demo2](https://user-images.githubusercontent.com/11646036/51765825-bde6ae00-208d-11e9-9c81-2c6c7dabd892.png)
 
+### Run codes on Spark
+![reviewdata_schema](https://user-images.githubusercontent.com/11646036/51766297-10749a00-208f-11e9-850d-e8b5c689179a.png)
+
+
+
+![metadata_schema](https://user-images.githubusercontent.com/11646036/51766305-14082100-208f-11e9-8607-476e7f283e98.png)
+
 
 # Stretch Goals
 * Workflow automation: Schedulers like Airflow?
