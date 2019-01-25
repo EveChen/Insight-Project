@@ -27,9 +27,11 @@ A web application that user can enter the product link or name. It will show som
 
 # Status
 <Have done>
+
 ![w2-demo1](https://user-images.githubusercontent.com/11646036/51765824-bde6ae00-208d-11e9-812f-02037a1ce6e5.png)
 
 <Struggling>
+
 ![w2-demo2](https://user-images.githubusercontent.com/11646036/51765825-bde6ae00-208d-11e9-9c81-2c6c7dabd892.png)
 
 
