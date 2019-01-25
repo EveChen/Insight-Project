@@ -1,5 +1,5 @@
 # Project Idea 
-A dashboard to provide the reliability of Amazon reviews for customers to make buying decisions. As the user enter the product link, this dashboard will automatically show top 10 most reliable reviews and the least reliable reviews (based on the average helpfulness score, word count and the review history).
+Amazon has over 130+ millions of reviews and ratings for customers to make their buying decisions. However, reading reviews, comparing rankings and ratings take time, especially when unreliable products flood the market place by fake reviews and ratings. Leveraging 50 GB customer buying records, I create **_a dashboard for Amazon users to check the reliability of a specific product, based on trustworthiness of reviews and ratings_**. 
 
 # Tech Stack
 
@@ -15,14 +15,16 @@ Amazon review data: !http://jmcauley.ucsd.edu/data/amazon/
   
 
 # Engineering Challenge
-1. How to join different datasets, especially there're 50 datasets (1 GB/per data set) seperatedly within AWS S3.
+1. How to join different datasets, especially there're 50 datasets seperated within AWS S3.
 2. How to join/query efficiently?
+3. How to adjust the reliable ratio in the real-time manner.
 
 # Business Value
-Customers can refer to the reliable reviews to make buying decisions.
+This dashboard updates the reliability of each product in a real-time manner, which prevents customers from chewing too many misleading product information/reviews and misplacing an unsatisfied order.
 
 # MVP
-A web application that user can enter the product link or name. It will show some basic information (e.g. item name, price, rating etc) and the ranking about the top 10 most/least reliable reviews. 
+A web application that user can enter the product link or name. It will show some basic information (e.g. item name, price etc) and the **_reliable ratio_** by calculating the overall ratings, reviews, rankings. 
+
 
 # Stretch Goals
 * Workflow automation: Schedulers like Airflow?
