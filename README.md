@@ -2,10 +2,9 @@
 A dashboard to provide the reliability of Amazon reviews for customers to make buying decisions. As the user enter the product link, this dashboard will automatically show top 10 most reliable reviews and the least reliable reviews (based on the average helpfulness score, word count and the review history).
 
 # Tech Stack
-1. AWS S3: Data Storage
-2. Spark: Data Processing
-4. PostgreSQL: Query
-5. Flask: Dashboard
+
+![pipeline](https://user-images.githubusercontent.com/11646036/51764047-f1730980-2088-11e9-9584-d076dcaf27bc.png)
+
 
 # Data Source
 Amazon review data: !http://jmcauley.ucsd.edu/data/amazon/
