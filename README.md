@@ -25,6 +25,13 @@ This dashboard updates the reliability of each product in a real-time manner, wh
 # MVP
 A web application that user can enter the product link or name. It will show some basic information (e.g. item name, price etc) and the **_reliable ratio_** by calculating the overall ratings, reviews, rankings. 
 
+# Status
+<Have done>
+![w2-demo1](https://user-images.githubusercontent.com/11646036/51765824-bde6ae00-208d-11e9-812f-02037a1ce6e5.png)
+
+<Struggling>
+![w2-demo2](https://user-images.githubusercontent.com/11646036/51765825-bde6ae00-208d-11e9-9c81-2c6c7dabd892.png)
+
 
 # Stretch Goals
 * Workflow automation: Schedulers like Airflow?
