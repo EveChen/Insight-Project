@@ -22,7 +22,7 @@ df = sqlContext.read.format('json').load(path)
 #PostgreSQL
 
 
-properties = {'user': 'postgres', 'password': '3890', 'driver': 'org.postgresql.Driver'}
+
 mode = "overwrite"
 url = "jdbc:postgresql://34.209.104.124:5432/my_db"
 
