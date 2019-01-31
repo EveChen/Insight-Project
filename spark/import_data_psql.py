@@ -22,9 +22,10 @@ df = sqlContext.read.format('json').load(path)
 #PostgreSQL
 
 
-
+properties = {'user': config["user"], 'password': config["password"], 'driver': 'org.postgresql.Driver'}
 mode = "overwrite"
-url = "jdbc:postgresql://34.209.104.124:5432/my_db"
+ip_address = config["ip_address"]
+url = "jdbc:postgresql://ip_address:5432/my_db"
 
 try:
     df.write.jdbc(url = url, table="fulldata", mode = mode, properties = properties)
