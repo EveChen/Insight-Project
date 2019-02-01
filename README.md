@@ -4,6 +4,8 @@ Amazon has over 130+ millions of reviews and ratings for customers to make their
 #### Project Slide
 https://docs.google.com/presentation/d/1CJkFzqABHCsr9JGt8ByJdXUaWfwLAsKnYuK8jKnMsEw/edit#slide=id.g4ea19a762d_0_8
 
+Insight Platform: https://docs.google.com/presentation/d/1Ip7DDsDuzonyqgxwMOh5q6okE-Y9OTgXkw2r_WnFB_c/edit#slide=id.g4ea321c474_0_0
+
 # Tech Stack
 
 ![pipeline](https://user-images.githubusercontent.com/11646036/51764047-f1730980-2088-11e9-9584-d076dcaf27bc.png)
