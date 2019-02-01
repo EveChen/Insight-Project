@@ -1,6 +1,9 @@
 # Project Idea 
 Amazon has over 130+ millions of reviews and ratings for customers to make their buying decisions. However, reading reviews, comparing rankings and ratings take time, especially when unreliable products flood the market place by fake reviews and ratings. Leveraging 50 GB customer buying records, I create **_a dashboard for Amazon users to check the reliability of a specific product, based on trustworthiness of reviews and ratings_**. 
 
+#### Project Slide
+https://docs.google.com/presentation/d/1CJkFzqABHCsr9JGt8ByJdXUaWfwLAsKnYuK8jKnMsEw/edit#slide=id.g4ea19a762d_0_8
+
 # Tech Stack
 
 ![pipeline](https://user-images.githubusercontent.com/11646036/51764047-f1730980-2088-11e9-9584-d076dcaf27bc.png)
