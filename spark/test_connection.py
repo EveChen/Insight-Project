@@ -7,6 +7,7 @@
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext, SparkSession
 
+# Test the connection between Spark and MySQL
 spark = SparkSession.builder.appName('ReadData').getOrCreate()
 df = spark.read.format("jdbc").options(
     url='jdbc:mysql://ec2-54-212-162-51.us-west-2.compute.amazonaws.com:3306/my_db',
