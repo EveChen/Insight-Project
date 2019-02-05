@@ -1,4 +1,4 @@
-# Initiate my Flask app
+# Initiate my Flask app - to check if MySQL can connect with Flask
 
 # Packages
 from flask import Flask
