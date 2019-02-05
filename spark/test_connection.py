@@ -10,11 +10,11 @@ from pyspark.sql import SQLContext, SparkSession
 # Test the connection between Spark and MySQL
 spark = SparkSession.builder.appName('ReadData').getOrCreate()
 df = spark.read.format("jdbc").options(
-    url='jdbc:mysql://ec2-54-212-162-51.us-west-2.compute.amazonaws.com:3306/my_db',
+    url='jdbc:mysql://public_DNS:3306/database_name',
     driver = 'com.mysql.cj.jdbc.Driver',
-    dbtable = '(SELECT * FROM reviews) as reviews',
-    user = 'newuser',
-    password = 'Xiavi293@').load()
+    dbtable = '(SELECT * FROM table_name) as table_new_name',
+    user = 'username',
+    password = 'password').load()
 df.show()
 
-# Finally, run "spark-submit --jars /path/mysql-connector-java-8.0.15.jar my_python_codes.py"
+# Finally, run "spark-submit --jars /path/mysql-connector-java-8.0.15.jar python_codes.py"
