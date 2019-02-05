@@ -7,20 +7,21 @@ from flask import render_template
 
 app = Flask(__name__)
 
-# set up connection
+# Configuration: set up connection
 mysql = MySQL()
-app.config['MYSQL_DATABASE_USER'] = 'newuser'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Xiavi293@'
-app.config['MYSQL_DATABASE_DB'] = 'my_db'
-app.config['MYSQL_DATABASE_HOST'] = 'ec2-34-213-6-190.us-west-2.compute.amazonaws.com'
+app.config['MYSQL_DATABASE_USER'] = 'username'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
+app.config['MYSQL_DATABASE_DB'] = 'database_name'
+app.config['MYSQL_DATABASE_HOST'] = 'public_DNS'
 mysql.init_app(app)
 
 
+# Query 10 lines from the table to Flask
 @app.route("/")
 def show_top_five():
     conn = mysql.connect()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM reviews LIMIT 5")
+    cursor.execute("SELECT * FROM table_name LIMIT 10")
     results = cursor.fetchall()
     print(results)
     print(type)
