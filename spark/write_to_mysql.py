@@ -17,9 +17,9 @@ df = sqlContext.read.json(path).select("asin", "overall", "reviewTime", "reviewT
 
 # Append data from Spark to MySQL table (table name is "reviews")
 df.write.format("jdbc").options(
-    url='jdbc:mysql://ec2-54-212-162-51.us-west-2.compute.amazonaws.com:3306/my_db',
+    url='jdbc:mysql://public_DNS:3306/database_name',
     driver = 'com.mysql.cj.jdbc.Driver',
-    dbtable = 'reviews',
-    user = 'newuser',
-    password = 'Xiavi293@').mode('append').save()
+    dbtable = 'table_name',
+    user = 'username',
+    password = 'password').mode('append').save()
 
