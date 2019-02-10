@@ -1,102 +1,57 @@
+import plotly.plotly as py
+import plotly.graph_objs as go
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from flask import Flask
-import plotly.graph_objs as go
-import psycopg2
 import MySQLdb
 import pandas as pd
 
-server = Flask(__name__)
-app = dash.Dash(__name__, server = server)
+# Connect with MySQL & Query
+conn = MySQLdb.connect(host="ec2-34-213-6-190.us-west-2.compute.amazonaws.com",
+user="newuser", passwd="Xiavi293@", db="my_db")
+cursor = conn.cursor()
+cursor.execute('SELECT * FROM dash');
+rows = cursor.fetchall()
 
-# Connect MySQL with Dash
-def fetchData(command):
-    conn = MySQLdb.connect(host="ec2-34-213-6-190.us-west-2.compute.amazonaws.com",
-            user="newuser", passwd="Xiavi293@", db="my_db")
-    try:
-        # connect to the MySQL server
-        cur = conn.cursor()
-        cur.execute(command);
-        rows = cur.fetchall()
-        cur.close()
-    except (Exception) as error:
-        print(error)
-        raise error
-    finally:
-        if conn is not None:
-            conn.close()
-    return rows
+# Create a dataframe
+df = pd.DataFrame([[ij for ij in i] for i in rows])
+df.rename(columns = {0: "Product_ID", 1: "Title", 2: "Price", 3: "Category", 4: "Asin", 5: "Original_ratings", 6: "Adjusted_ratings", 7:"Average_subjectivity", 8:"Label"}, inplace = True)
+df.drop(['Product_ID', 'Asin', 'Average_subjectivity'], axis = 1, inplace = True)
+# Create a table based on the dataframe I created
+def generate_table(dataframe, max_rows=10):
+    return html.Table(
+        # Header
+        [html.Tr([html.Th(col) for col in dataframe.columns])] +
 
+        # Body
+        [html.Tr([
+            html.Td(dataframe.iloc[i][col]) for col in dataframe.columns
+        ]) for i in range(min(len(dataframe), max_rows))]
+    )
 
+# Create app
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-# Make category dropdown list
-def query_category():
-    results = "SELECT DISTINCT category FROM metadata_small"
-    return fetchData(results)
-
-#
-# all_category = query_category()
-# category_dropdown = dcc.Dropdown(
-#     id = "category_dropdown",
-#     options = [{"label": c, "value": c} for c in all_category],
-#     placeholder = "Select a category"
-# )
-categories = ['', 'books', 'electronics', 'moviestv', 'cdsvinyl', 'clothingshoesjewelry', 'homekitchen', 'kindlestore', 'sportsoutdoors', 'cellphonesaccessories', 'healthpersonalcare', 'toysgames', 'videogames', 'toolshomeimprovement', 'beauty', 'appsforandroid', 'officeproducts', 'petsupplies', 'automotive', 'grocerygourmetfood', 'patiolawngarden', 'baby', 'digitalmusic', 'musicalinstruments', 'amazoninstantvideo']
-category_dropdown = dcc.Dropdown(
-    id = "category_dropdown",
-    options = [{"label": c, "value": c} for c in categories],
-    placeholder = "Select a category"
-)
-
-# Get Metadata from MySQL
-def query_metadata():
-    results = "SELECT asin, title FROM metadata_small"
-    return fetchData(results)
-
-all_products = query_metadata()
-product_dropdown = dcc.Dropdown(
-    id = "product_dropdown",
-    options = [{"label": p[1], "value": p[0]} for p in all_products],
-    placeholder = "Select a product"
-)
-
-def query_info():
-    results = "SELECT price, imUrl FROM metadata_small"
-    return fetchData(results)
-
-# Test table
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
-
-# app.layout = dash_table.DataTable(
-#     id='table',
-#     columns=[{"name": i, "id": i} for i in df.columns],
-#     data=df.to_dict("rows"),
-# )
-
-app.layout = html.Div([
-    # Header
-    html.H1(children='Search the Adjusted Amazon Ratings'),
-    # Dropdown lists
+# Create the app layout
+app.layout = html.Div(children=[
+    html.H4(children='Amazon Adjusted Ratings'),
+    html.Label("Enter a keyword and press submit"),
     html.Div([
         html.Div([
-            category_dropdown,
-            product_dropdown
-        ],
-        style = {'width' : '48%', 'display' : 'inline-block'})
-
-        # html.Div([
-        #
-        # ],
-        # style = {'width' : '48%', 'display' : 'inline-block'})
+            html.Div(dcc.Input(id='input-box', type='text', placeholder = 'Enter a product name...', value = ''))
+        ]),
+        html.Div([
+            html.Button('Submit', id='button')
+        ])
     ]),
-
-    # Image
-    html.Div(
-        html.Img(src='http://ecx.images-amazon.com/images/I/41SwthpdD9L._SX300_.jpg',height="10%")
-        ,style={"float":"middle","height":"10%"}),
-
+    generate_table(df)
 ])
 
+# @app.callback(
+#     Output(component_id = '', component_property = ''),
+#     [Input(component_id = 'input-box', component_property = 'value')]
+# )
+
 if __name__ == '__main__':
-    app.run_server(debug=True, host="0.0.0.0")
+    app.run_server(debug=True, host = '0.0.0.0')
