@@ -28,9 +28,8 @@ Amazon review data: !http://jmcauley.ucsd.edu/data/amazon/
 This dashboard updates the reliability of each product in a real-time manner, which prevents customers from chewing too many misleading product information/reviews and misplacing an unsatisfied order.
 
 # MVP
-A web application that user can enter the product link or name. It will show some basic information (e.g. item name, price etc) and the **_reliable ratio_** by calculating the overall ratings, reviews, rankings. 
+A web application that user can enter the product name. It will automatically show the **_adjusted ratings_** and some basic information (e.g. item name, price etc) based on sentiments from each Amazon reviews. 
 
-![w2-demo2](https://user-images.githubusercontent.com/11646036/51765825-bde6ae00-208d-11e9-9c81-2c6c7dabd892.png)
 
 ### Run codes on Spark
 ![reviewdata_schema](https://user-images.githubusercontent.com/11646036/51766297-10749a00-208f-11e9-850d-e8b5c689179a.png)
