@@ -64,6 +64,7 @@ app.layout = html.Div([
 ])
 
 
+# Callback: use the input value as the key to query product information
 @app.callback(Output('output-query', 'children'),
               [Input('input-productname', 'value')])
 def update_output(input):
