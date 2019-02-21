@@ -1,8 +1,12 @@
 # Project Idea 
 Amazon has over 130+ millions of reviews and ratings for customers to make their buying decisions. However, reading reviews, comparing rankings and ratings take time, especially when Amazon recommended several products and most of them have high ratings. Leveraging 50 GB customer buying records, I create **_an adjusted ratings, which has counted in the subjectivity and polarity of each reviews_**. 
 
-#### Project Slide
+# Demo
+Live demo: http://ec2-54-244-215-93.us-west-2.compute.amazonaws.com:8050/
+Youtube (in case the server is down): https://www.youtube.com/watch?v=cFgAHGjCXqo
+Project Slide:
 https://docs.google.com/presentation/d/1Ip7DDsDuzonyqgxwMOh5q6okE-Y9OTgXkw2r_WnFB_c/edit#slide=id.g4ea321c474_0_0
+
 
 # Tech Stack
 
@@ -10,7 +14,7 @@ https://docs.google.com/presentation/d/1Ip7DDsDuzonyqgxwMOh5q6okE-Y9OTgXkw2r_WnF
 
 
 # Data Source
-Amazon review data: !http://jmcauley.ucsd.edu/data/amazon/
+Amazon review data: http://jmcauley.ucsd.edu/data/amazon/
 1. Review data (40 GB) 
 2. Product metadata (10 GB)
 
@@ -20,7 +24,7 @@ Amazon review data: !http://jmcauley.ucsd.edu/data/amazon/
 # Engineering Challenge
 How to join two large tables in MySQL?
 Solution: Use MySQL Index
-
+![index](https://user-images.githubusercontent.com/11646036/53174597-0a46e000-359f-11e9-8269-d33d516c4599.png)
 
 # Business Value
 This dashboard provides an easy way for users to compare products without chewing too many subjective reviews and misplacing an unsatisfied order.
