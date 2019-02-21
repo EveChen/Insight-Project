@@ -24,7 +24,11 @@ Amazon review data: http://jmcauley.ucsd.edu/data/amazon/
 # Engineering Challenge
 How to join two large tables in MySQL?
 Solution: Use MySQL Index
-![index](https://user-images.githubusercontent.com/11646036/53174597-0a46e000-359f-11e9-8269-d33d516c4599.png)
+Data Size | Before Index | After Index
+--------- | ------------ | -----------
+500 MB | 5 min 34 sec | 0.25 sec
+5 GB | 50 min 26 sec | 23.6 sec
+50 GB | ? | 41.4 sec
 
 # Business Value
 This dashboard provides an easy way for users to compare products without chewing too many subjective reviews and misplacing an unsatisfied order.
