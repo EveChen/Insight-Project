@@ -10,8 +10,8 @@ from dash.dependencies import Output, Input, State
 
 # Connect MySQL with Dash
 def fetchData(command):
-    conn = MySQLdb.connect(host="ec2-34-213-6-190.us-west-2.compute.amazonaws.com",
-            user="newuser", passwd="Xiavi293@", db="my_db")
+    conn = MySQLdb.connect(host="ec2_publicDNS",
+            user="username", passwd="passwd", db="db")
     try:
         # connect to the MySQL server
         cur = conn.cursor()
